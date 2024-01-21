@@ -48,9 +48,12 @@ class WishListController extends Controller
      * @param  \App\Models\WishList  $wishList
      * @return \Illuminate\Http\Response
      */
-    public function show(WishList $wishList)
+    public function show($id)
     {
         //
+        // echo $id;
+        $response = WishList::where('user_id', $id)->get();
+        return $response;
     }
 
     /**

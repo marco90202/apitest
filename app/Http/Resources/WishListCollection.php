@@ -6,6 +6,8 @@ use Illuminate\Http\Resources\Json\ResourceCollection;
 
 class WishListCollection extends ResourceCollection
 {
+    public static $wrap = false;
+
     /**
      * Transform the resource collection into an array.
      *
