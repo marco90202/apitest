@@ -2,18 +2,17 @@
 
 namespace App\Http\Resources;
 
-use Illuminate\Http\Resources\Json\JsonResource;
+use Illuminate\Http\Resources\Json\ResourceCollection;
 
-class ProductResource extends JsonResource
+class WishListCollection extends ResourceCollection
 {
-    public static $wrap = false;
     /**
-     * Transform the resource into an array.
+     * Transform the resource collection into an array.
      *
      * @param  \Illuminate\Http\Request  $request
      * @return array|\Illuminate\Contracts\Support\Arrayable|\JsonSerializable
      */
-    public function toArray($request):array
+    public function toArray($request)
     {
         $data = parent::toArray($request);
         return $data;

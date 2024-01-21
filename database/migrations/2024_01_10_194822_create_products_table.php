@@ -16,12 +16,12 @@ class CreateProductsTable extends Migration
         Schema::create('products', function (Blueprint $table) {
             $table->id();
             $table->string('title');
-            $table->string('rating');
-            $table->string('releasedate');
-            $table->string('gameimg');
-            $table->string('discountpercentage');
-            $table->float('regularprice');
-            $table->float('discountprice');
+            $table->string('steamRatingText');
+            $table->integer('releaseDate');
+            $table->string('thumb');
+            $table->string('savings');
+            $table->float('normalPrice');
+            $table->float('salePrice');
             $table->timestamps();
         });
     }
