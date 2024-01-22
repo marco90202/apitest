@@ -74,7 +74,18 @@ class CartController extends Controller
     public function destroy($id)
     {
         //
-        $response = Cart::where('user_id', $id)->delete();
-        return $response;
+        $response = Cart::where('user_id', $id)->get();
+        if(count($response)>0){
+            $response = Cart::where('user_id', $id)->delete();
+            return $response;
+        }
+        $response2 = Cart::where('product_id', $id)->get();
+        if(count($response2)===1){
+            $response2 = Cart::where('product_id', $id)->delete();
+            return $response2;
+        }
+
+        
+        
     }
 }
